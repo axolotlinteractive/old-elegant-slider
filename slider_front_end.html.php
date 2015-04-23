@@ -1718,14 +1718,21 @@ jQuery(function(){
 					$target="";
 					?>
 					  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">      
-						<?php if($image_row->sl_url!=""){ 
+						<?php
+                        if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
 							echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
-						} ?>
-						<a class="fancybox" rel="group" href="<?php echo $image_row->image_url; ?>">
+						}
+                        else if($fancybox)
+                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url .'">'
+                        ?>
+
                             <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
-                        </a>
-						<?php if($image_row->sl_url!=""){ echo '</a>'; }?>		
+						<?php
+                        if($image_row->sl_url!="" || $fancybox) {
+                            echo '</a>';
+                        }
+                        ?>
 						<div class="huge_it_slideshow_title_text_<?php echo $sliderID; ?> <?php if(trim($image_row->name)=="") echo "none"; ?>">
 							<?php echo $image_row->name; ?>
 						</div>
