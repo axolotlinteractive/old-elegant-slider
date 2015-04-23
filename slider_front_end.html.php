@@ -31,13 +31,7 @@ function front_end_slider($images, $paramssld, $slider)
 		if(strpos($image_row->image_url,'vimeo') !== false){$hasvimeo=true;}
 	}
 
-if($fancybox) {
-    ?>
-    <script>
-        $(".fancybox").fancybox();
-    </script>
-<?php
-}
+
 
 if ($hasvimeo==true) { ?>
 <script src="<?php echo plugins_url( 'js/vimeo.lib.js' , __FILE__ ) ?>"></script>
@@ -800,6 +794,8 @@ jQuery(function(){
       }
       
       jQuery(window).load(function () {
+
+        jQuery(".fancybox").fancybox();
 		jQuery(window).resize(function() {
 			huge_it_popup_resize_<?php echo $sliderID; ?>();
 		});
