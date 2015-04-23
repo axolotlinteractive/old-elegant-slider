@@ -1688,12 +1688,12 @@ jQuery(function(){
 			<?php
 			   if ($paramssld['slider_show_arrows']=="on") {
 			 ?>
-				<a id="huge_it_slideshow_left_<?php echo $sliderID; ?>" href="#">
+				<a class="elegant_left_arrow" id="huge_it_slideshow_left_<?php echo $sliderID; ?>" href="#">
 					<div id="huge_it_slideshow_left-ico_<?php echo $sliderID; ?>">
 					<div><i class="huge_it_slideshow_prev_btn_<?php echo $sliderID; ?> fa"></i></div></div>
 				</a>
 				
-				<a id="huge_it_slideshow_right_<?php echo $sliderID; ?>" href="#">
+				<a class="elegant_right_arrow" id="huge_it_slideshow_right_<?php echo $sliderID; ?>" href="#">
 					<div id="huge_it_slideshow_right-ico_<?php echo $sliderID;?> , data_<?php echo $sliderID;?>">
 					<div><i class="huge_it_slideshow_next_btn_<?php echo $sliderID; ?> fa"></i></div></div>
 				</a>
