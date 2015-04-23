@@ -141,34 +141,12 @@ function elegant_slider_options_panel()
     $page_cat = add_menu_page('Theme page title', 'Elegant Slider', 'manage_options', 'sliders_huge_it_slider', 'sliders_huge_it_slider', 'dashicons-images-alt2');
     add_submenu_page('sliders_huge_it_slider', 'Sliders', 'Sliders', 'manage_options', 'sliders_huge_it_slider', 'sliders_huge_it_slider');
     $page_option = add_submenu_page('sliders_huge_it_slider', 'General Options', 'General Options', 'manage_options', 'Options_slider_styles', 'Options_slider_styles');
-	add_submenu_page( 'sliders_huge_it_slider', 'Licensing', 'Licensing', 'manage_options', 'huge_it_slider_Licensing', 'huge_it_slider_Licensing');
 	add_submenu_page('sliders_huge_it_slider', 'Featured Plugins', 'Featured Plugins', 'manage_options', 'huge_it_slider_featured_plugins', 'huge_it_slider_featured_plugins');
 	
 	add_action('admin_print_styles-' . $page_cat, 'huge_it_slider_admin_script');
     add_action('admin_print_styles-' . $page_option, 'huge_it_slider_option_admin_script');
 	
 }
-function huge_it_slider_Licensing(){
-
-	?>
-    <div style="width:95%">
-    <p>
-	This plugin is the non-commercial version of the Huge IT slider. If you want to customize to the styles and colors of your website,than you need to buy a license.
-Purchasing a license will add possibility to customize the general options of the Huge IT slider. 
-
- </p>
-<br /><br />
-<a href="http://huge-it.com/slider/" class="button-primary" target="_blank">Purchase a License</a>
-<br /><br /><br />
-<p>After the purchasing the commercial version follow this steps:</p>
-<ol>
-	<li>Deactivate Huge IT slider Plugin</li>
-	<li>Delete Huge IT slider Plugin</li>
-	<li>Install the downloaded commercial version of the plugin</li>
-</ol>
-</div>
-<?php
-	}
 function huge_it_slider_featured_plugins()
 {
 		?>
