@@ -53,12 +53,6 @@ function html_showsliders( $rows,  $pageNav,$sort,$cat_row){
 			<div><a href="http://huge-it.com/wordpress-plugins-slider-user-manual/" target="_blank">User Manual</a></div>
 			<div>This section allows you to configure the Slider options. <a href="http://huge-it.com/wordpress-plugins-slider-user-manual/" target="_blank">More...</a></div>
 		</div>
-		<div style="float: right;">
-			<a class="header-logo-text" href="http://huge-it.com/slider/" target="_blank">
-				<div><img width="250px" src="<?php echo $path_site2; ?>/huge-it1.png" /></div>
-				<div>Get the full version</div>
-			</a>
-		</div>
 	</div>
 	<div style="clear:both;"></div>
 	<div id="poststuff">
@@ -233,12 +227,6 @@ function change_select()
 		<div style="float: left;">
 			<div><a href="http://huge-it.com/wordpress-plugins-slider-user-manual/" target="_blank">User Manual</a></div>
 			<div>This section allows you to configure the Slider options. <a href="http://huge-it.com/wordpress-plugins-slider-user-manual/" target="_blank">More...</a></div>
-		</div>
-		<div style="float: right;">
-			<a class="header-logo-text" href="http://huge-it.com/slider/" target="_blank">
-				<div><img width="250px" src="<?php echo $path_site2; ?>/huge-it1.png" /></div>
-				<div>Get the full version</div>
-			</a>
 		</div>
 	</div>
 	<div style="clear:both;"></div>

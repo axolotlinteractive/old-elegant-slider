@@ -11,12 +11,6 @@ function      html_showStyles($param_values, $op_type)
 			<div>This section allows you to configure the Slider options. <a href="http://huge-it.com/wordpress-plugins-slider-user-manual/" target="_blank">More...</a></div>
 			<div>These options are made for pro users, and are displayed only for demonstration. Unfortunatelly free users are unable to use them.</div>
 		</div>
-		<div style="float: right;">
-			<a class="header-logo-text" href="http://huge-it.com/slider/" target="_blank">
-				<div><img width="250px" src="<?php echo $path_site2; ?>/huge-it1.png" /></div>
-				<div>Get the full version</div>
-			</a>
-		</div>
 	</div>
 	<div style="clear: both;"></div>
 <div id="poststuff">
