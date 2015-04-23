@@ -1584,9 +1584,9 @@ jQuery(function(){
 
 	?>
 <?php if($sliderloadingicon == "on")	{ ?>
-<div class="huge_it_slideshow_image_wrap_<?php echo $sliderID; ?> nocolor">
+<div class="elegant_slideshow_image_wrap huge_it_slideshow_image_wrap_<?php echo $sliderID; ?> nocolor">
 <?php } else { ?>
-<div class="huge_it_slideshow_image_wrap_<?php echo $sliderID; ?> ">
+<div class="elegant_slideshow_image_wrap huge_it_slideshow_image_wrap_<?php echo $sliderID; ?> ">
 <?php } ?>
 	<?php if($sliderloadingicon == "on")	{ ?>
 		<div id="huge_it_loading_image_<?php echo $sliderID;  ?>" class="display" ><img  src="<?php echo plugins_url('', __FILE__).'/Front_images/loading/loading'.$paramssld["loading_icon_type"].'.gif'; ?>"/> </div>
