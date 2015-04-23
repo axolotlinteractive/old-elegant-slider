@@ -29,11 +29,17 @@ function front_end_slider($images, $paramssld, $slider)
 	foreach ($images as $key => $image_row) {
 		if(strpos($image_row->image_url,'youtube') !== false || strpos($image_row->image_url,'youtu.be') !== false){$hasyoutube=true;}
 		if(strpos($image_row->image_url,'vimeo') !== false){$hasvimeo=true;}
-	}	
-?>
+	}
 
+if($fancybox) {
+    ?>
+    <script>
+        $(".fancybox").fancybox();
+    </script>
+<?php
+}
 
-<?php if ($hasvimeo==true){?>
+if ($hasvimeo==true) { ?>
 <script src="<?php echo plugins_url( 'js/vimeo.lib.js' , __FILE__ ) ?>"></script>
 <script>
 jQuery(function(){
