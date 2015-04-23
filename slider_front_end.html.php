@@ -1600,7 +1600,7 @@ jQuery(function(){
       ?>
 		<!-- ##########################DOTS######################### -->
         <div class="huge_it_slideshow_dots_container_<?php echo $sliderID; ?>">
-			  <div class="huge_it_slideshow_dots_thumbnails_<?php echo $sliderID; ?>">
+			  <div class="elegant_dots_container huge_it_slideshow_dots_thumbnails_<?php echo $sliderID; ?>">
 				<?php
 				$current_image_id=0;
 				$current_pos =0;
