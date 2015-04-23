@@ -3,7 +3,7 @@
 function front_end_slider($images, $paramssld, $slider)
 {
     wp_enqueue_script("fancy_box_js",  plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
-    wp_enqueue_script("fancy_box_css",  plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
+    wp_enqueue_style("fancy_box_css",  plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
  ob_start();
 	$sliderID=$slider[0]->id;
 	$slidertitle=$slider[0]->name;
