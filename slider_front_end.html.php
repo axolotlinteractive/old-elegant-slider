@@ -3,6 +3,7 @@
 function front_end_slider($images, $paramssld, $slider)
 {
     $fancybox = true;//TODO make dynamic
+    $auto_play = false;
     if ($fancybox) {
         wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
         wp_enqueue_style("fancy_box_css", plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
@@ -830,13 +831,19 @@ jQuery(function(){
       });
 
       function play_<?php echo $sliderID; ?>() {	   
-        /* Play.*/
-		//errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- paly  ---- ");
-        huge_it_playInterval_<?php echo $sliderID; ?> = setInterval(function () {
-			//errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- time left ---- ");
-          var iterator = 1;
-          huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,false);
-        }, '<?php echo $slidepausetime; ?>');
+      	<?php
+      	if($auto_play) {
+      		?>
+	        /* Play.*/
+			//errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- paly  ---- ");
+	        huge_it_playInterval_<?php echo $sliderID; ?> = setInterval(function () {
+				//errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- time left ---- ");
+	          var iterator = 1;
+	          huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,false);
+	        }, '<?php echo $slidepausetime; ?>');
+	    <?php
+      	}
+      	?>
       }
 	  
       jQuery(window).focus(function() {
