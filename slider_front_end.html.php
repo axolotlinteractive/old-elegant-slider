@@ -755,9 +755,14 @@ jQuery(function(){
 		
 		var bodyWidth=jQuery(window).width();
         var parentWidth = jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").parent().width();
+        var paddingRight = jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css("padding-right").replace("px", "");//TODO account for other size dimensions
+        var paddingLeft = jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css("padding-left").replace("px", "");//TODO account for other size dimensions
+
 		//if responsive js late responsive.js @  take body size and not parent div
-		if(sliderwidth>parentWidth){sliderwidth=parentWidth;}
-		if(sliderwidth>bodyWidth){sliderwidth=bodyWidth;}
+		if(sliderwidth>parentWidth)
+			sliderwidth=parentWidth - paddingRight - paddingLeft;
+		if(sliderwidth>bodyWidth)
+			sliderwidth=bodyWidth - paddingRight - paddingRight;
 		
 		var str=(<?php echo $sliderheight;?>/staticsliderwidth);
 		
