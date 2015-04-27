@@ -1089,8 +1089,7 @@ jQuery(function(){
 		margin: 0 auto;
 		width:100%;
 		height:100%;
-		_width: inherit;
-		_height: inherit;
+		overflow: hidden;
 	  }
 	  .huge_it_slider_<?php echo $sliderID; ?> {
 		width:100%;
@@ -1700,9 +1699,7 @@ jQuery(function(){
 		</div>
 	  <!-- ##########################IMAGES######################### -->
       <div id="huge_it_slideshow_image_container_<?php echo $sliderID; ?>" style="width: <?=$sliderwidth?>px; height:<?=$sliderheight?>px" class="elegant_slideshow_image_container huge_it_slideshow_image_container_<?php echo $sliderID; ?>">
-        <div class="huge_it_slide_container_<?php echo $sliderID; ?>">
-          <div class="huge_it_slide_bg_<?php echo $sliderID; ?>">
-            <ul class="elegant_slider huge_it_slider_<?php echo $sliderID; ?>">
+            <div class="elegant_slider huge_it_slider_<?php echo $sliderID; ?>">
 			  <?php
 			  $i=0;
 			  foreach ($images as $key => $image_row) {
@@ -1714,7 +1711,7 @@ jQuery(function(){
 					case 'image':
 					$target="";
 					?>
-					  <li class="huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
+					  <div class="huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
                         if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
@@ -1737,7 +1734,7 @@ jQuery(function(){
 						<div class="elegant_slideshow_description huge_it_slideshow_description_text_<?php echo $sliderID; ?> <?php if(trim($image_row->description)=="") echo "none"; ?>">
 							<?php echo $image_row->description; ?>
 						</div>
-					  </li>
+					  </div>
 					  <?php
 					$i++;
 					break;
@@ -1829,8 +1826,6 @@ jQuery(function(){
 			 } 
 			  ?>
 			   <input  type="hidden" id="huge_it_current_image_key_<?php echo $sliderID; ?>" value="0" />
-            </ul>
-          </div>
         </div>
       </div>
 	</div>
