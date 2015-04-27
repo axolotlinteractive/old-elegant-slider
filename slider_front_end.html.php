@@ -781,7 +781,7 @@ jQuery(function(){
 		
 		if("<?php echo $paramssld['slider_crop_image']; ?>"=="resize"){
 			jQuery(".huge_it_slideshow_image_<?php echo $sliderID; ?>,  .huge_it_slideshow_image_container_<?php echo $sliderID; ?> img").css({
-				cssText: "width:" + sliderwidth + "px; height:" + ((sliderwidth) * str)	+"px;"
+				cssText: "max-width:" + sliderwidth + "px; max-height:" + ((sliderwidth) * str)	+"px;"
 			});
 		}else {
 			jQuery(".huge_it_slideshow_image_<?php echo $sliderID; ?>,.huge_it_slideshow_image_item2_<?php echo $sliderID; ?>").css({
