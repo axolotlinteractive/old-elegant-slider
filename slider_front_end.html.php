@@ -1106,6 +1106,7 @@ jQuery(function(){
 		margin:0px !important;
 		padding:0px  !important;
 		border-radius: <?php echo $paramssld['slider_slideshow_border_radius']; ?>px !important;
+		display: inline-block;
 	  }
 	  .huge_it_slideshow_image_second_item_<?php echo $sliderID; ?> {
 		width:100%;
