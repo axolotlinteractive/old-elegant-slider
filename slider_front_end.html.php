@@ -1126,9 +1126,7 @@ jQuery(function(){
 	  }
 	  
 	   .huge_it_slideshow_image_second_item_<?php echo $sliderID; ?> a, .huge_it_slideshow_image_item_<?php echo $sliderID; ?> a {
-			display:block;
-			width:100%;
-			height:100%;	
+			display:inline-block;
 	   }
 	   
 	  .huge_it_grid_<?php echo $sliderID; ?> {
