@@ -3,6 +3,7 @@
 function front_end_slider($images, $paramssld, $slider)
 {
     $fancybox = true;//TODO make dynamic
+    $startFancy = false;
     $auto_play = false;
     if ($fancybox) {
         wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
@@ -796,7 +797,7 @@ jQuery(function(){
       
       jQuery(window).load(function () {
 
-        jQuery(".fancybox").fancybox();
+        <?=$startFancy ? 'jQuery(".fancybox").fancybox();' : '' ?>
 		jQuery(window).resize(function() {
 			huge_it_popup_resize_<?php echo $sliderID; ?>();
 		});
