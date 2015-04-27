@@ -962,6 +962,14 @@ jQuery(function(){
 		vertical-align: middle;
 		width:100%;
 	  }	  
+
+	  .elegant_slideshow_image_container {
+	  	overflow: hidden;
+	  }
+
+	  .elegant_slider {
+	  	list-style: none;
+	  }
 		
 	  .huge_it_slideshow_title_text_<?php echo $sliderID; ?> {
 		text-decoration: none;
@@ -1701,10 +1709,10 @@ jQuery(function(){
 			?>
 		</div>
 	  <!-- ##########################IMAGES######################### -->
-      <div id="huge_it_slideshow_image_container_<?php echo $sliderID; ?>" style="width: <?=$sliderwidth?>px; height:<?=$sliderheight?>px" class="huge_it_slideshow_image_container_<?php echo $sliderID; ?>">
+      <div id="huge_it_slideshow_image_container_<?php echo $sliderID; ?>" style="width: <?=$sliderwidth?>px; height:<?=$sliderheight?>px" class="elegant_slideshow_image_container huge_it_slideshow_image_container_<?php echo $sliderID; ?>">
         <div class="huge_it_slide_container_<?php echo $sliderID; ?>">
           <div class="huge_it_slide_bg_<?php echo $sliderID; ?>">
-            <ul class="huge_it_slider_<?php echo $sliderID; ?>">
+            <ul class="elegant_slider huge_it_slider_<?php echo $sliderID; ?>">
 			  <?php
 			  $i=0;
 			  foreach ($images as $key => $image_row) {
