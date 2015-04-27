@@ -955,7 +955,6 @@ jQuery(function(){
 	  }
 	  
 	  .huge_it_slideshow_image_container_<?php echo $sliderID; ?> {
-		display: table;
 		position: relative;
 		top:0px;
 		left:0px;
@@ -1075,24 +1074,8 @@ jQuery(function(){
 			margin:0px;
 	   }
 
-	  .huge_it_slide_container_<?php echo $sliderID; ?> {
-		display: table-cell;
-		margin: 0 auto;
-		position: relative;
-		vertical-align: middle;
-		width:100%;
-		height:100%;
-		_width: inherit;
-		_height: inherit;
-	  }
-	  .huge_it_slide_bg_<?php echo $sliderID; ?> {
-		margin: 0 auto;
-		width:100%;
-		height:100%;
-		overflow: hidden;
-	  }
 	  .huge_it_slider_<?php echo $sliderID; ?> {
-		width:100%;
+		width: <?=$sliderwidth * 2?>px;
 		height:100%;
 		display:block !important;
 		text-align: center;
