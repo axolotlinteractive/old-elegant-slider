@@ -1732,7 +1732,7 @@ jQuery(function(){
 							echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
 						}
                         else if($fancybox)
-                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url .'" title="' . $image_row->description . '">'
+                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url .'" title="' . $image_row->title . '" data-description="' . $image_row->description . '">';
                         ?>
 
                             <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
