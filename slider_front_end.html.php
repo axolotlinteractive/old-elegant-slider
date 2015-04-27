@@ -1095,7 +1095,8 @@ jQuery(function(){
 	  .huge_it_slider_<?php echo $sliderID; ?> {
 		width:100%;
 		height:100%;
-		display:table !important;
+		display:block !important;
+		text-align: center;
 		padding:0px !important;
 		margin:0px !important;
 		
@@ -1712,7 +1713,7 @@ jQuery(function(){
 					case 'image':
 					$target="";
 					?>
-					  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
+					  <li class="huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
                         if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
