@@ -1101,17 +1101,6 @@ jQuery(function(){
 		
 	  }
 	  .huge_it_slideshow_image_item_<?php echo $sliderID; ?> {
-		width:100%;
-		height:100%;
-		_width: inherit;
-		_height: inherit;
-		display: table-cell;
-		filter: Alpha(opacity=100);
-		opacity: 1;
-		position: absolute;
-		top:0px !important;
-		left:0px !important;
-		vertical-align: middle;
 		z-index: 1;
 		margin:0px !important;
 		padding:0px  !important;
