@@ -1724,14 +1724,14 @@ jQuery(function(){
 					case 'image':
 					$target="";
 					?>
-					  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">      
+					  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
                         if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
 							echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
 						}
                         else if($fancybox)
-                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url .'">'
+                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url .'" title="' . $image_row->description . '">'
                         ?>
 
                             <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
