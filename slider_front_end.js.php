@@ -153,14 +153,6 @@ if ($hasvimeo==true) {
 
 
 <script>
-
-    jQuery(document).ready(function() {
-        var width = 0;
-        jQuery.each(jQuery(".elegant_slider_item"), function(index, sliderItem) {
-            width+= $(sliderItem).width();
-        });
-        jQuery(".elegant_slider").width(width);
-    });
     var data_<?php echo $sliderID; ?> = [];
     var event_stack_<?php echo $sliderID; ?> = [];
     video_is_playing_<?php echo $sliderID; ?>=false;
@@ -756,6 +748,11 @@ if ($hasvimeo==true) {
 
     jQuery(window).load(function () {
 
+        var width = 0;
+        jQuery.each(jQuery(".elegant_slider_item"), function(index, sliderItem) {
+            width+= $(sliderItem).width();
+        });
+        jQuery(".elegant_slider").width(width);
         <?=$startFancy ? 'jQuery(".fancybox").fancybox();' : '' ?>
         jQuery(window).resize(function() {
             huge_it_popup_resize_<?php echo $sliderID; ?>();
@@ -825,8 +822,8 @@ if ($hasvimeo==true) {
 
     //start better code
     function moveSlide($arrow, direction) {
-        var $dotsContainser = $arrow.parent(".elegant_slideshow_dots_container");
-        var $imageContainer = $dotsContainser.siblings(".elegant_slideshow_image_container");
+        var $dotsContainer = $arrow.parent(".elegant_slideshow_dots_container");
+        var $imageContainer = $dotsContainer.siblings(".elegant_slideshow_image_container");
         var $activeImageContainer = $imageContainer.find(".active");
         var $sliderItems = $imageContainer.find(".elegant_slider_item");
         var currentPosition = $activeImageContainer.data("position") - 0;
