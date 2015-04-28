@@ -31,51 +31,33 @@ if ($hasvimeo==true) {
             ?>
 
             jQuery('iframe').each(function(){
-                Froogaloop(this).addEvent('ready', ready);
+                Froogaloop(this).addEvent('ready', vimeoReady);
             });
             jQuery(".sidedock,.controls").remove();
-            function ready(player_id) {
-
-                froogaloop = $f(player_id);
-
-                function setupEventListeners() {
-                    function setVideoVolume(player_id,value) {
-                        Froogaloop(player_id).api('setVolume',value);
-                    }
-                    function setVideoColor(player_id,value) {
-                        Froogaloop(player_id).api('setColor',value);
-                    }
-                    function onPlay() {
-                        froogaloop.addEvent('play',
-                            function(){
-                                video_is_playing_<?php echo $sliderID; ?>=true;
-                            });
-                    }
-                    function onPause() {
-                        froogaloop.addEvent('pause',
-                            function(){
-                                video_is_playing_<?php echo $sliderID; ?>=false;
-                            });
-                    }
-                    function stopVimeoVideo(player){
-                        Froogaloop(player).api('pause');
-                    }
-
-                    setVideoVolume(player_id,volumes[i]);
-                    setVideoColor(player_id,colors[i]);
-                    i++;
-
-                    onPlay();
-                    onPause();
-                    jQuery('#huge_it_slideshow_left_<?php echo $sliderID; ?>, #huge_it_slideshow_right_<?php echo $sliderID; ?>,.huge_it_slideshow_dots_<?php echo $sliderID; ?>').click(function(){
-                        stopVimeoVideo(player_id);
-                    });
-                }
-                setupEventListeners();
-            }
         });
+        function vimeoReady(player_id) {
+
+            froogaloop = $f(player_id);
+
+
+            Froogaloop(player_id).api('setVolume',volumes[i]);
+            Froogaloop(player_id).api('setColor', colors[i]);
+            i++;
+
+            froogaloop.addEvent('play', function() {
+                video_is_playing_<?= $sliderID ?> = true;
+            });
+            froogaloop.addEvent('pause', function() {
+                video_is_playing_<?= $sliderID; ?> = false;
+            });
+            jQuery('#huge_it_slideshow_left_<?php echo $sliderID; ?>, #huge_it_slideshow_right_<?php echo $sliderID; ?>,.huge_it_slideshow_dots_<?php echo $sliderID; ?>').click(function(){
+                Froogaloop(player_id).api('pause');
+            });
+        }
     </script>
-<?php } ?>
+<?php
+}
+?>
 
 <?php if ($hasyoutube==true){?>
 
