@@ -195,7 +195,8 @@ function front_end_slider($images, $paramssld, $slider)
                         }
                         ?>
 
-                            <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
+                            <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="elegant_slideshow_image huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
+                            <span class="slider_overlay"></span>
 						<?php
                         if($image_row->sl_url!="" || $fancybox) {
                             echo '</a>';
