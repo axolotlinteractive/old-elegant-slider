@@ -39,6 +39,7 @@ if ($hasvimeo==true) { ?>
 <script src="<?php echo plugins_url( 'js/vimeo.lib.js' , __FILE__ ) ?>"></script>
 <script>
 jQuery(function(){
+
 	var vimeoPlayer = document.querySelector('iframe');
 
 	var volumes = [];
@@ -193,6 +194,14 @@ jQuery(function(){
 	
 	
 <script>
+
+	jQuery(document).ready(function() {
+		var width = 0;
+		jQuery.each(jQuery(".elegant_slider_item"), function(index, sliderItem) {
+			width+= $(sliderItem).width();
+		});
+		jQuery(".elegant_slider").width(width);
+	});
 	var data_<?php echo $sliderID; ?> = [];      
 	var event_stack_<?php echo $sliderID; ?> = [];
 	video_is_playing_<?php echo $sliderID; ?>=false;
@@ -1686,7 +1695,7 @@ jQuery(function(){
 					case 'image':
 					$target="";
 					?>
-					  <div class="huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
+					  <div class="elegant_slider_item huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
                         if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
