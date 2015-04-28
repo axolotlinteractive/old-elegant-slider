@@ -6,7 +6,8 @@
  * Time: 12:16 AM
  */
 
-if ($hasvimeo==true) { ?>
+if ($hasvimeo==true) {
+    ?>
     <script src="<?php echo plugins_url( 'js/vimeo.lib.js' , __FILE__ ) ?>"></script>
     <script>
         jQuery(function(){
@@ -18,11 +19,16 @@ if ($hasvimeo==true) { ?>
             var i=0;
             <?php
             $i=0;
-            //$vimeoparams=array_reverse($images);
-            foreach ($images as $key => $image_row) {	if($image_row->sl_type=="video" and strpos($image_row->image_url,'vimeo') !== false){?>
-            volumes[<?php echo $i; ?>] = '<?php echo intval($image_row->description)/100; ?>';
-            colors[<?php echo $i; ?>] = '<?php echo $image_row->link_target; ?>';
-            <?php $i++;}	} ?>
+            foreach ($images as $key => $image_row) {
+                if($image_row->sl_type=="video" and strpos($image_row->image_url,'vimeo') !== false) {
+                    ?>
+                    volumes[<?=$i?>] = '<?=intval($image_row->description) / 100?>';
+                    colors[<?=$i?>] = '<?=$image_row->link_target?>';
+                    <?php
+                    $i++;
+                }
+            }
+            ?>
 
             jQuery('iframe').each(function(){
                 Froogaloop(this).addEvent('ready', ready);
