@@ -829,6 +829,12 @@ if ($hasvimeo==true) {
         var $imageContainer = $dotsContainser.siblings(".elegant_slideshow_image_container");
         var $activeImageContainer = $imageContainer.find(".active");
         var $sliderItems = $imageContainer.find(".elegant_slider_item");
-        $location =
+        var currentPosition = $activeImageContainer.data("position") - 0;
+        var nextPosition = currentPosition + direction;
+        if(nextPosition == $sliderItems.length)
+            nextPosition = 0;
+        if(nextPosition < 0)
+            nextPosition = $sliderItems.length - 1;
+         $nextImageContainer = $sliderItems[nextPosition];
     }
 </script>
