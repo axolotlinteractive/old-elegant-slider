@@ -214,8 +214,9 @@
     .huge_it_slider_<?php echo $sliderID; ?> {
         width: <?=$sliderwidth * 2?>px;
         height:100%;
+        position: absolute;
+        left: 0;
         display:block !important;
-        text-align: center;
         padding:0px !important;
         margin:0px !important;
 
@@ -225,7 +226,7 @@
         margin:0px !important;
         padding:0px  !important;
         border-radius: <?php echo $paramssld['slider_slideshow_border_radius']; ?>px !important;
-        display: inline-block;
+        float: left;
     }
     .huge_it_slideshow_image_second_item_<?php echo $sliderID; ?> {
         width:100%;
