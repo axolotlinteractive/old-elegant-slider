@@ -5,6 +5,7 @@ function front_end_slider($images, $paramssld, $slider)
     $fancybox = true;//TODO make dynamic
     $startFancy = false;
     $auto_play = false;
+    $slideCenter = true;
     if ($fancybox) {
         wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
         wp_enqueue_style("fancy_box_css", plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
@@ -67,7 +68,7 @@ function front_end_slider($images, $paramssld, $slider)
       $current_pos = 0;
       ?>
 		<!-- ##########################DOTS######################### -->
-        <div class="huge_it_slideshow_dots_container_<?php echo $sliderID; ?>">
+        <div class="elegant_slideshow_dots_container huge_it_slideshow_dots_container_<?php echo $sliderID; ?>">
 			  <div class="elegant_dots_container huge_it_slideshow_dots_thumbnails_<?php echo $sliderID; ?>">
 				<?php
 				$current_image_id=0;
