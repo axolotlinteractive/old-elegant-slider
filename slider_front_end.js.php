@@ -825,6 +825,10 @@ if ($hasvimeo==true) {
 
     //start better code
     function moveSlide($arrow, direction) {
-
+        var $dotsContainser = $arrow.parent(".elegant_slideshow_dots_container");
+        var $imageContainer = $dotsContainser.siblings(".elegant_slideshow_image_container");
+        var $activeImageContainer = $imageContainer.find(".active");
+        var $sliderItems = $imageContainer.find(".elegant_slider_item");
+        $location =
     }
 </script>

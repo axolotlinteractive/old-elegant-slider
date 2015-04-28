@@ -184,7 +184,7 @@ function front_end_slider($images, $paramssld, $slider)
 					case 'image':
 					$target="";
 					?>
-					  <div class="elegant_slider_item huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
+					  <div data-position="<?=$i?>" class="<?= $i == 0 ? 'active' : '' ?> elegant_slider_item huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
                         if($image_row->sl_url!=""){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
