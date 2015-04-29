@@ -752,6 +752,7 @@ if ($hasvimeo==true) {
         jQuery.each(jQuery(".elegant_slider_item"), function(index, sliderItem) {
             width+= $(sliderItem).width();
         });
+        width+= 20;//extra width doesnt hurt, and it helps us on firefox/ie
         jQuery(".elegant_slider").width(width);
         <?=$startFancy ? 'jQuery(".fancybox").fancybox();' : '' ?>
         jQuery(window).resize(function() {
