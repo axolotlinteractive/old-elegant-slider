@@ -735,7 +735,7 @@ if ($hasvimeo==true) {
             $(img).width(newWidth);
             $(img).height(newHeight);
         });
-        //TODO foreach images and set width and height to be correct aspect ratio
+        changeLeftPosition();
 
         if("<?php echo $slideshow_title_position[1]; ?>"=="middle"){var titlemargintopminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerHeight()/2;}
         if("<?php echo $slideshow_title_position[0]; ?>"=="center"){var titlemarginleftminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerWidth()/2;}
