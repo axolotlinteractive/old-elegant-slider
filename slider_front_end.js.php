@@ -853,13 +853,14 @@ if ($hasvimeo==true) {
 
     function changeLeftPosition() {
 
-         $elegantSlideshowContainer = $(".elegant_slideshow_image_container");
-         activeContainer = $elegantSlideshowContainer.find(".active");
+        var  $elegantSlideshowContainer = $(".elegant_slideshow_image_container");
+        var  activeContainer = $elegantSlideshowContainer.find(".active");
         var $elegantSlider = $elegantSlideshowContainer.find(".elegant_slider");
 
         var  newLeft =  activeContainer.get(0).offsetLeft -
             ($elegantSlideshowContainer.width() / 2 - $(activeContainer).find("img").width() / 2);
-
+        $elegantSlider.clearQueue();
+        $elegantSlider.stop();
         $elegantSlider.animate({left : - newLeft});
     }
 </script>
