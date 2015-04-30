@@ -845,13 +845,21 @@ if ($hasvimeo==true) {
         if(nextPosition < 0)
             nextPosition = $sliderItems.length - 1;
         var nextImageContainer = $sliderItems[nextPosition];
-        var  newLeft =  nextImageContainer.offsetLeft -
-                         ($imageContainer.width() / 2 - $(nextImageContainer).find("img").width() / 2);
-
-        $elegantSlider.animate({left : - newLeft});
-
-
         $activeImageContainer.removeClass("active");
         $(nextImageContainer).addClass("active");
+
+        changeLeftPosition();
+    }
+
+    function changeLeftPosition() {
+
+         $elegantSlideshowContainer = $(".elegant_slideshow_image_container");
+         activeContainer = $elegantSlideshowContainer.find(".active");
+        var $elegantSlider = $elegantSlideshowContainer.find(".elegant_slider");
+
+        var  newLeft =  activeContainer.get(0).offsetLeft -
+            ($elegantSlideshowContainer.width() / 2 - $(activeContainer).find("img").width() / 2);
+
+        $elegantSlider.animate({left : - newLeft});
     }
 </script>
