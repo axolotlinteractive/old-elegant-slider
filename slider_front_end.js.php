@@ -722,10 +722,20 @@ if ($hasvimeo==true) {
 
         var str=(<?php echo $sliderheight;?>/staticsliderwidth);
 
+        var newHeight = (sliderwidth) * str;
+
         jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css({width: (sliderwidth)});
-        jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css({height: ((sliderwidth) * str)});
+        jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css({height: (newHeight)});
         jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({width: (sliderwidth)});
-        jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({height: ((sliderwidth) * str)});
+        jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({height: (newHeight)});
+        jQuery.each(jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?> img"), function(index, img){
+            var currentHeight = $(img).height();
+            var currentWidth = $(img).width();
+            var newWidth = newHeight * currentWidth / currentHeight;
+            $(img).width(newWidth);
+            $(img).height(newHeight);
+        });
+        //TODO foreach images and set width and height to be correct aspect ratio
 
         if("<?php echo $slideshow_title_position[1]; ?>"=="middle"){var titlemargintopminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerHeight()/2;}
         if("<?php echo $slideshow_title_position[0]; ?>"=="center"){var titlemarginleftminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerWidth()/2;}
