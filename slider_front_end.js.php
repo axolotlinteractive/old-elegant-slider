@@ -729,11 +729,11 @@ if ($hasvimeo==true) {
         jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({width: (sliderwidth)});
         jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({height: (newHeight)});
         jQuery.each(jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?> img"), function(index, img){
-            var currentHeight = $(img).height();
-            var currentWidth = $(img).width();
+            var currentHeight = jQuery(img).height();
+            var currentWidth = jQuery(img).width();
             var newWidth = newHeight * currentWidth / currentHeight;
-            $(img).width(newWidth);
-            $(img).height(newHeight);
+            jQuery(img).width(newWidth);
+            jQuery(img).height(newHeight);
         });
         changeLeftPosition();
 
@@ -760,7 +760,7 @@ if ($hasvimeo==true) {
 
         var width = 0;
         jQuery.each(jQuery(".elegant_slider_item"), function(index, sliderItem) {
-            width+= $(sliderItem).width();
+            width+= jQuery(sliderItem).width();
         });
         width+= 20;//extra width doesnt hurt, and it helps us on firefox/ie
         jQuery(".elegant_slider").width(width);
@@ -770,13 +770,13 @@ if ($hasvimeo==true) {
         });
 
         jQuery('#huge_it_slideshow_left_<?php echo $sliderID; ?>').on('click',function(){
-            moveSlide($(this), -1);
+            moveSlide(jQuery(this), -1);
     //TODO rewrite        huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) >= 0 ? (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length : data_<?php echo $sliderID; ?>.length - 1, data_<?php echo $sliderID; ?>,false,true);
             return false;
         });
 
         jQuery('#huge_it_slideshow_right_<?php echo $sliderID; ?>').on('click',function(){
-            moveSlide($(this), 1);
+            moveSlide(jQuery(this), 1);
    //TODO rewrite         huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,true);
             return false;
         });
@@ -845,19 +845,19 @@ if ($hasvimeo==true) {
             nextPosition = $sliderItems.length - 1;
         var nextImageContainer = $sliderItems[nextPosition];
         $activeImageContainer.removeClass("active");
-        $(nextImageContainer).addClass("active");
+        jQuery(nextImageContainer).addClass("active");
 
         changeLeftPosition();
     }
 
     function changeLeftPosition() {
 
-        var  $elegantSlideshowContainer = $(".elegant_slideshow_image_container");
+        var  $elegantSlideshowContainer = jQuery(".elegant_slideshow_image_container");
         var  activeContainer = $elegantSlideshowContainer.find(".active");
         var $elegantSlider = $elegantSlideshowContainer.find(".elegant_slider");
 
         var  newLeft =  activeContainer.get(0).offsetLeft -
-            ($elegantSlideshowContainer.width() / 2 - $(activeContainer).find("img").width() / 2);
+            ($elegantSlideshowContainer.width() / 2 - jQuery(activeContainer).find("img").width() / 2);
         $elegantSlider.clearQueue();
         $elegantSlider.stop();
         $elegantSlider.animate({left : - newLeft});
