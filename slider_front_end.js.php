@@ -10,7 +10,7 @@
 ?>
 <script>
     var sliderEffect = '<?php echo $slidereffect;?>';
-    var autoPlay = '<?php echo $auto_play?>';
+    var autoPlay = <?php echo $auto_play?>;
 </script>
 <?php
 
