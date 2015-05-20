@@ -6,6 +6,12 @@
  * Time: 12:16 AM
  */
 
+?>
+<script>
+    var sliderEffect = '<?php echo $slidereffect;?>';
+</script>
+<?php
+
 if ($hasvimeo==true) {
     ?>
     <script src="<?php echo plugins_url( 'js/vimeo.lib.js' , __FILE__ ) ?>"></script>
@@ -735,7 +741,8 @@ if ($hasvimeo==true) {
             jQuery(img).width(newWidth);
             jQuery(img).height(newHeight);
         });
-        changeLeftPosition();
+        if(sliderEffect == "slideCenter")
+            changeLeftPosition();
 
         if("<?php echo $slideshow_title_position[1]; ?>"=="middle"){var titlemargintopminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerHeight()/2;}
         if("<?php echo $slideshow_title_position[0]; ?>"=="center"){var titlemarginleftminus=jQuery(".huge_it_slideshow_title_text_<?php echo $sliderID; ?>").outerWidth()/2;}
@@ -770,14 +777,22 @@ if ($hasvimeo==true) {
         });
 
         jQuery('#huge_it_slideshow_left_<?php echo $sliderID; ?>').on('click',function(){
-            moveSlide(jQuery(this), -1);
-    //TODO rewrite        huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) >= 0 ? (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length : data_<?php echo $sliderID; ?>.length - 1, data_<?php echo $sliderID; ?>,false,true);
+            if(sliderEffect == "slideCenter") {
+                moveSlide(jQuery(this), -1);
+            }
+            else {
+                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) >= 0 ? (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length : data_<?php echo $sliderID; ?>.length - 1, data_<?php echo $sliderID; ?>, false, true);
+            }
             return false;
         });
 
         jQuery('#huge_it_slideshow_right_<?php echo $sliderID; ?>').on('click',function(){
-            moveSlide(jQuery(this), 1);
-   //TODO rewrite         huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,true);
+            if(sliderEffect == "slideCenter") {
+                moveSlide(jQuery(this), -1);
+            }
+            else {
+                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>, false, true);
+            }
             return false;
         });
 
