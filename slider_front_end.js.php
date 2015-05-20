@@ -779,21 +779,25 @@ if ($hasvimeo==true) {
         });
 
         jQuery('#huge_it_slideshow_left_<?php echo $sliderID; ?>').on('click',function(){
-            if(sliderEffect == "slideCenter") {
-                moveSlide(jQuery(this), -1);
-            }
-            else {
-                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) >= 0 ? (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length : data_<?php echo $sliderID; ?>.length - 1, data_<?php echo $sliderID; ?>, false, true);
+            switch (sliderEffect) {
+                case "slideCenter":
+                    moveCenterSlide(jQuery(this), -1);
+                    break;
+                default:
+                    huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) >= 0 ? (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) - iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length : data_<?php echo $sliderID; ?>.length - 1, data_<?php echo $sliderID; ?>, false, true);
+                    break;
             }
             return false;
         });
 
         jQuery('#huge_it_slideshow_right_<?php echo $sliderID; ?>').on('click',function(){
-            if(sliderEffect == "slideCenter") {
-                moveSlide(jQuery(this), -1);
-            }
-            else {
-                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>, false, true);
+            switch (sliderEffect) {
+                case "slideCenter":
+                    moveCenterSlide(jQuery(this), 1);
+                    break;
+                default:
+                    huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator_<?php echo $sliderID; ?>()) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>, false, true);
+                    break;
             }
             return false;
         });
@@ -845,7 +849,7 @@ if ($hasvimeo==true) {
     });
 
     //start better code
-    function moveSlide($arrow, direction) {
+    function moveCenterSlide($arrow, direction) {
         var $dotsContainer = $arrow.parent(".elegant_slideshow_dots_container");
         var $imageContainer = $dotsContainer.siblings(".elegant_slideshow_image_container");
         var $activeImageContainer = $imageContainer.find(".active");
