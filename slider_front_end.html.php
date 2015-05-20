@@ -202,12 +202,14 @@ function front_end_slider($images, $paramssld, $slider)
                             echo '</a>';
                         }
                         ?>
-						<div class="elegant_slideshow_title huge_it_slideshow_title_text_<?php echo $sliderID; ?> <?php if(trim($image_row->name)=="") echo "none"; ?>">
-							<?php echo $image_row->name; ?>
-						</div>
-						<div class="elegant_slideshow_description huge_it_slideshow_description_text_<?php echo $sliderID; ?> <?php if(trim($image_row->description)=="") echo "none"; ?>">
-							<?php echo $image_row->description; ?>
-						</div>
+                          <span class="elegant_slideshow_text_wrapper">
+                            <div class="elegant_slideshow_title huge_it_slideshow_title_text_<?php echo $sliderID; ?> <?php if(trim($image_row->name)=="") echo "none"; ?>">
+                                <?php echo $image_row->name; ?>
+                            </div>
+                            <div class="elegant_slideshow_description huge_it_slideshow_description_text_<?php echo $sliderID; ?> <?php if(trim($image_row->description)=="") echo "none"; ?>">
+                                <?php echo $image_row->description; ?>
+                            </div>
+                          </span>
 					  </div>
 					  <?php
 					$i++;
