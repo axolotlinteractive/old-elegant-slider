@@ -639,6 +639,7 @@ jQuery(document).ready(function($){
 									<option <?php if($row->slider_list_effects_s == 'fan'){ echo 'selected'; } ?>  value="fan">Fan</option>
 									<option <?php if($row->slider_list_effects_s == 'blindH'){ echo 'selected'; } ?>  value="blindH">Blind Horizontal</option>
 									<option <?php if($row->slider_list_effects_s == 'blindV'){ echo 'selected'; } ?>  value="blindV">Blind Vertical</option>
+                                    <option <?php if($row->slider_list_effects_s == 'slideCenter'){ echo 'selected'; } ?>  value="slideCenter">Slide Center</option>
 									<option <?php if($row->slider_list_effects_s == 'random'){ echo 'selected'; } ?>  value="random">Random</option>
 							</select>
 						</li>
