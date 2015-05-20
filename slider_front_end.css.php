@@ -212,7 +212,7 @@
     }
 
     .huge_it_slider_<?php echo $sliderID; ?> {
-        width: <?=$sliderwidth * 2?>px;
+        width: 100%;/*TODO check in foster*/
         height:100%;
         position: absolute;
         left: 0;
