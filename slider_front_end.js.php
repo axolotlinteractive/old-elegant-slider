@@ -6,9 +6,11 @@
  * Time: 12:16 AM
  */
 
+
 ?>
 <script>
     var sliderEffect = '<?php echo $slidereffect;?>';
+    var autoPlay = '<?php echo $auto_play?>';
 </script>
 <?php
 
@@ -816,19 +818,15 @@ if ($hasvimeo==true) {
     });
 
     function play_<?php echo $sliderID; ?>() {
-        <?php
-        if($auto_play) {
-            ?>
-        /* Play.*/
-        //errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- paly  ---- ");
-        huge_it_playInterval_<?php echo $sliderID; ?> = setInterval(function () {
-            //errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- time left ---- ");
-            var iterator = 1;
-            huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,false);
-        }, '<?php echo $slidepausetime; ?>');
-        <?php
-          }
-          ?>
+        if(autoPlay) {
+            /* Play.*/
+            //errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- paly  ---- ");
+            huge_it_playInterval_<?php echo $sliderID; ?> = setInterval(function () {
+                //errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- time left ---- ");
+                var iterator = 1;
+                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,false);
+            }, '<?php echo $slidepausetime; ?>');
+        }
     }
 
     jQuery(window).focus(function() {
