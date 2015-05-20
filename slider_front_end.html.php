@@ -2,10 +2,12 @@
 
 function front_end_slider($images, $paramssld, $slider)
 {
-    $fancybox = true;//TODO make dynamic
+    $fancybox = false;//TODO make dynamic
     $startFancy = false;
-    $auto_play = false;
-    $slideCenter = true;
+    $auto_play = true;
+    $slideCenter = false;
+    $imageLink = false;
+
     if ($fancybox) {
         wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
         wp_enqueue_style("fancy_box_css", plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
@@ -186,7 +188,7 @@ function front_end_slider($images, $paramssld, $slider)
 					?>
 					  <div data-position="<?=$i?>" class="<?= $i == 0 ? 'active' : '' ?> elegant_slider_item huge_it_slideshow_image_item_<?php echo $sliderID; ?>" id="image_id_<?php echo $sliderID.'_'.$i ?>">
 						<?php
-                        if($image_row->sl_url!=""){
+                        if($image_row->sl_url!="" && $imageLink){
 							if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
 							echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
 						}
@@ -198,7 +200,7 @@ function front_end_slider($images, $paramssld, $slider)
                             <img id="huge_it_slideshow_image_<?php echo $sliderID; ?>" class="elegant_slideshow_image huge_it_slideshow_image_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
                             <span class="slider_overlay"></span>
 						<?php
-                        if($image_row->sl_url!="" || $fancybox) {
+                        if($image_row->sl_url!="" && $imageLink || $fancybox) {
                             echo '</a>';
                         }
                         ?>
