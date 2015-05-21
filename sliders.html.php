@@ -675,11 +675,11 @@ jQuery(document).ready(function($){
 
                         <li>
                             <label for="fancybox">Use Fancybox?</label>
-                            <input type="checkbox" name="autoplay"  value="on" id="autoplay"  <?php if($row->fancybox){ echo 'checked="checked"'; } ?> />
+                            <input type="checkbox" name="fancybox"  value="on" id="fancybox"  <?php if($row->fancybox){ echo 'checked="checked"'; } ?> />
                         </li>
                         <li>
                             <label for="fancybox">Use Fancybox Defaults?</label>
-                            <input type="checkbox" name="autoplay"  value="on" id="autoplay"  <?php if($row->default_fancybox){ echo 'checked="checked"'; } ?> />
+                            <input type="checkbox" name="default_fancybox"  value="on" id="default_fancybox"  <?php if($row->default_fancybox){ echo 'checked="checked"'; } ?> />
                         </li>
 					</ul>
 						<div id="major-publishing-actions">
