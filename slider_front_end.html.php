@@ -313,6 +313,7 @@ function front_end_slider($images, $paramssld, $slider)
 				} 
 			 } 
 			  ?>
+                <input  type="hidden" id="huge_it_current_image_key_<?php echo $sliderID; ?>" value="0" />
         </div>
       </div>
 	</div>
