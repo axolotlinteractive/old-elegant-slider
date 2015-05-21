@@ -2,17 +2,11 @@
 
 function front_end_slider($images, $paramssld, $slider)
 {
-    $fancybox = false;//TODO make dynamic
-    $startFancy = false;
-    $auto_play = true;
-    $slideCenter = false;
-    $imageLink = false;
-
-    if ($fancybox) {
-        wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
-        wp_enqueue_style("fancy_box_css", plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
-    }
+    $imageLink = false;//TODO make dynamic
  ob_start();
+    $fancybox = $slider[0]->fancybox;
+    $startFancy = $slider[0]->default_fancybox;
+    $auto_play = $slider[0]->autoplay;
 	$sliderID=$slider[0]->id;
 	$slidertitle=$slider[0]->name;
 	$sliderheight=$slider[0]->sl_height;
@@ -28,6 +22,12 @@ function front_end_slider($images, $paramssld, $slider)
 	$slideshow_title_position = explode('-', $trim_slideshow_title_position);
 	$trim_slideshow_description_position = trim($paramssld['slider_description_position']);
 	$slideshow_description_position = explode('-', $trim_slideshow_description_position);
+
+
+    if ($fancybox) {
+        wp_enqueue_script("fancy_box_js", plugins_url("js/jquery.fancybox.pack.js", __FILE__), FALSE);
+        wp_enqueue_style("fancy_box_css", plugins_url("style/jquery.fancybox.css", __FILE__), FALSE);
+    }
 
 	$hasyoutube=false;
 	$hasvimeo=false;
