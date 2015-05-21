@@ -1,0 +1,22 @@
+.elegant_slideshow_image_wrap {
+    background: none;
+}
+
+.elegant_slider {
+    position: relative;
+}
+
+.elegant_slider .elegant_slider_item {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.elegant_slider .elegant_slider_item.active {
+    z-index: 1;
+    opacity: 1;
+}
