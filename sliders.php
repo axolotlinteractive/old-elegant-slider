@@ -523,11 +523,15 @@ function apply_cat($id)
 	$script_cat = preg_replace('#<script(.*?)>(.*?)</script>#is', '', stripslashes($_POST["content"]));
 	}
 
+    $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  autoplay = '%d'  WHERE ID = %d ", isset($_POST["autoplay"]) && $_POST["autoplay"] == "on" ? 1 : 0  , $id));
+    $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  fancybox = '%d'  WHERE ID = %d ", isset($_POST["fancybox"]) && $_POST["fancybox"] == "on" ? 1 : 0  , $id));
+    $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  default_fancybox = '%d'  WHERE ID = %d ", isset($_POST["default_fancybox"]) && $_POST["default_fancybox"] == "on" ? 1 : 0  , $id));
+
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  name = '%s'  WHERE ID = %d ", $_POST["name"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  sl_width = '%s'  WHERE ID = %d ", $_POST["sl_width"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  sl_height = '%s'  WHERE ID = %d ", $_POST["sl_height"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  pause_on_hover = '%s'  WHERE ID = %d ", $_POST["pause_on_hover"], $id));
-	 $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  slider_list_effects_s = '%s'  WHERE ID = %d ", $_POST["slider_effects_list"], $id));
+        $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  slider_list_effects_s = '%s'  WHERE ID = %d ", $_POST["slider_effects_list"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  description = '%s'  WHERE ID = %d ", $_POST["sl_pausetime"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  param = '%s'  WHERE ID = %d ", $_POST["sl_changespeed"], $id));
          $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_itslider_sliders SET  ordering = '1'  WHERE ID = %d ", $id));
