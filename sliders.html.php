@@ -644,6 +644,11 @@ jQuery(document).ready(function($){
 							</select>
 						</li>
 
+
+                        <li>
+                            <label for="autoplay">Autoplay Slider</label>
+                            <input type="checkbox" name="autoplay"  value="on" id="autoplay"  <?php if($row->autoplay){ echo 'checked="checked"'; } ?> />
+                        </li>
 						<li>
 							<label for="sl_pausetime">Pause time</label>
 							<input type="text" name="sl_pausetime" id="sl_pausetime" value="<?php echo $row->description; ?>" class="text_area" />
@@ -667,6 +672,15 @@ jQuery(document).ready(function($){
 								  <option <?php if($row->sl_loading_icon == 'off'){ echo 'selected'; } ?> value="off">Off</option>
 							</select>
 						</li>
+
+                        <li>
+                            <label for="fancybox">Use Fancybox?</label>
+                            <input type="checkbox" name="autoplay"  value="on" id="autoplay"  <?php if($row->fancybox){ echo 'checked="checked"'; } ?> />
+                        </li>
+                        <li>
+                            <label for="fancybox">Use Fancybox Defaults?</label>
+                            <input type="checkbox" name="autoplay"  value="on" id="autoplay"  <?php if($row->default_fancybox){ echo 'checked="checked"'; } ?> />
+                        </li>
 					</ul>
 						<div id="major-publishing-actions">
 							<div id="publishing-action">
