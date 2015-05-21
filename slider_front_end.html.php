@@ -1,4 +1,9 @@
 <?php
+//TODO put in auto loader
+require("classes/AssetPipeline.php");
+require("classes/CSSAsset.php");
+
+use WordWrap\CSSAsset;
 
 function front_end_slider($images, $paramssld, $slider)
 {
@@ -38,6 +43,11 @@ function front_end_slider($images, $paramssld, $slider)
 
     require("slider_front_end.js.php");
 	require("slider_front_end.css.old.php");
+
+    $cssAssets = new CSSAsset(plugin_dir_path( __FILE__ ) . "style/");
+    if($slidereffect == "fade")
+        $cssAssets->addAsset("sliders/" . $slidereffect);
+    $cssAssets->dumpAssets();
 		  	  $args = array(
     'numberposts' => 10,
     'offset' => 0,
