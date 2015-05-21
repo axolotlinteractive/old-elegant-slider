@@ -7,6 +7,7 @@ if(!function_exists('current_user_can')){
 	die('Access Denied');
 }
 
+
 function html_showsliders( $rows,  $pageNav,$sort,$cat_row){
 	global $wpdb;
 	?>
@@ -190,6 +191,12 @@ function Html_editslider($ord_elem, $count_ord,$images,$row,$cat_row, $rowim, $r
 
 {
  global $wpdb;
+    $wysiwygSettings = array(
+        'teeny' => true,
+        'textarea_rows' => 5,
+        'tabindex' => 1,
+        "media_buttons" => false
+    );
 	
 	if(isset($_GET["addslide"])){
 	if($_GET["addslide"] == 1){
@@ -410,18 +417,18 @@ jQuery(document).ready(function($){
 									<input  class="text_area" type="text" id="titleimage<?php echo $rowimages->id; ?>" name="titleimage<?php echo $rowimages->id; ?>" id="titleimage<?php echo $rowimages->id; ?>"  value="<?php echo $rowimages->name; ?>">
 								</div>
 								<div class="description-block">
-									<label for="im_description<?php echo $rowimages->id; ?>">Description:</label>
-									<textarea id="im_description<?php echo $rowimages->id; ?>" name="im_description<?php echo $rowimages->id; ?>" ><?php echo $rowimages->description; ?></textarea>
+                                    <label for="im_description<?php echo $rowimages->id; ?>">Description:</label>
+                                    <?php wp_editor($rowimages->description, 'im_description'. $rowimages->id, $wysiwygSettings); ?>
 								</div>
-								<div class="link-block">
-									<label for="sl_url<?php echo $rowimages->id; ?>">URL:</label>
-									<input class="text_area url-input" type="text" id="sl_url<?php echo $rowimages->id; ?>" name="sl_url<?php echo $rowimages->id; ?>"  value="<?php echo $rowimages->sl_url; ?>" >
-									<label class="long" for="sl_link_target<?php echo $rowimages->id; ?>">Open in new tab</label>
-									<input type="hidden" name="sl_link_target<?php echo $rowimages->id; ?>" value="" />
-									<input  <?php if($rowimages->link_target == 'on'){ echo 'checked="checked"'; } ?>  class="link_target" type="checkbox" id="sl_link_target<?php echo $rowimages->id; ?>" name="sl_link_target<?php echo $rowimages->id; ?>" />
-									
-									<!--<input type="checkbox" name="pause_on_hover" id="pause_on_hover"  <?php if($row->pause_on_hover == 'on'){ echo 'checked="checked"'; } ?>  class="link_target"/>-->
-								</div>
+<!--TODO only show if they are wrapping the image								<div class="link-block">-->
+<!--									<label for="sl_url--><?php //echo $rowimages->id; ?><!--">URL:</label>-->
+<!--									<input class="text_area url-input" type="text" id="sl_url--><?php //echo $rowimages->id; ?><!--" name="sl_url--><?php //echo $rowimages->id; ?><!--"  value="--><?php //echo $rowimages->sl_url; ?><!--" >-->
+<!--									<label class="long" for="sl_link_target--><?php //echo $rowimages->id; ?><!--">Open in new tab</label>-->
+<!--									<input type="hidden" name="sl_link_target--><?php //echo $rowimages->id; ?><!--" value="" />-->
+<!--									<input  --><?php //if($rowimages->link_target == 'on'){ echo 'checked="checked"'; } ?><!--  class="link_target" type="checkbox" id="sl_link_target--><?php //echo $rowimages->id; ?><!--" name="sl_link_target--><?php //echo $rowimages->id; ?><!--" />-->
+<!--									-->
+<!--									<!--<input type="checkbox" name="pause_on_hover" id="pause_on_hover"  --><?php //if($row->pause_on_hover == 'on'){ echo 'checked="checked"'; } ?><!--  class="link_target"/>-->
+<!--								</div>-->
 								<div class="remove-image-container">
 									<a class="button remove-image" href="admin.php?page=sliders_huge_it_slider&id=<?php echo $row->id; ?>&task=apply&removeslide=<?php echo $rowimages->id; ?>">Remove Image</a>
 								</div>

@@ -4,7 +4,7 @@
 Plugin Name: Elegant Slider
 Plugin URI: https://github.com/bryce13950/slider-image
 Description: Axolotl slider is a convenient tool for organizing the images represented on your website into sliders. Each product on the slider is assigned with a relevant slider, which makes it easier for the customers to search and identify the needed images within the slider.
-Version: 0.3.2
+Version: 0.4.1
 Author: http://axolotlinteractive.com
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
