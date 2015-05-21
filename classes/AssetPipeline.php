@@ -6,8 +6,7 @@
  * Time: 8:52 PM
  */
 
-//TODO move into WordWrap
-namespace ElegantSlider;
+namespace WordWrap;
 
 use \Exception;
 
@@ -40,11 +39,6 @@ class AssetPipeline {
      * @throws Exception if the asset we are looking for is not found
      */
     public function addAsset($assetName, $replaceValues = [], $fileExtension = null) {
-
-        foreach($this->loadedAssets as $asset){
-            if($asset["name"] == $assetName)
-                return;
-        }
 
         $fileExtension = $fileExtension == null ? $this->assetType : $fileExtension;
         $assetPath = $this->assetLocations . $assetName . "." . $fileExtension;
