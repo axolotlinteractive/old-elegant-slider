@@ -37,7 +37,7 @@ function front_end_slider($images, $paramssld, $slider)
 	}
 
     require("slider_front_end.js.php");
-	require("slider_front_end.css.php");
+	require("slider_front_end.css.old.php");
 		  	  $args = array(
     'numberposts' => 10,
     'offset' => 0,
