@@ -828,7 +828,9 @@ if ($hasvimeo==true) {
             huge_it_playInterval_<?php echo $sliderID; ?> = setInterval(function () {
                 //errorlogjQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").after(" -- time left ---- ");
                 var iterator = 1;
-                huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length, data_<?php echo $sliderID; ?>,false,false);
+                var activeImage = parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val());
+                var nextImage = (parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()) + iterator) % data_<?php echo $sliderID; ?>.length;
+                huge_it_change_image_<?php echo $sliderID; ?>(activeImage, nextImage, data_<?php echo $sliderID; ?>,false,false);
             }, '<?php echo $slidepausetime; ?>');
         }
     }
