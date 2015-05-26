@@ -169,12 +169,12 @@ function front_end_slider($images, $paramssld, $slider)
 			<?php
 			   if ($paramssld['slider_show_arrows']=="on") {
 			 ?>
-				<a class="elegant_left_arrow" id="huge_it_slideshow_left_<?php echo $sliderID; ?>" href="#">
+				<a class="elegant_slideshow_arrow elegant_left_arrow" id="huge_it_slideshow_left_<?php echo $sliderID; ?>" href="#">
 					<div id="huge_it_slideshow_left-ico_<?php echo $sliderID; ?>">
 					<div><i class="huge_it_slideshow_prev_btn_<?php echo $sliderID; ?> fa"></i></div></div>
 				</a>
 				
-				<a class="elegant_right_arrow" id="huge_it_slideshow_right_<?php echo $sliderID; ?>" href="#">
+				<a class="elegant_slideshow_arrow elegant_right_arrow" id="huge_it_slideshow_right_<?php echo $sliderID; ?>" href="#">
 					<div id="huge_it_slideshow_right-ico_<?php echo $sliderID;?> , data_<?php echo $sliderID;?>">
 					<div><i class="huge_it_slideshow_next_btn_<?php echo $sliderID; ?> fa"></i></div></div>
 				</a>
