@@ -114,6 +114,8 @@ function gen_string_slider_search($serch_word, $wordpress_query_post)
     return $string_search;
 }
 
+add_shortcode('elegant_slider', 'huge_it_slider_images_list_shotrcode');
+//@Deprecated
 add_shortcode('huge_it_slider', 'huge_it_slider_images_list_shotrcode');
 
 function   huge_it_cat_images_list($id)
@@ -436,7 +438,7 @@ class Huge_it_Widget extends WP_Widget {
 			if ( ! empty( $title ) )
 				echo $before_title . $title . $after_title;
 
-			echo do_shortcode("[huge_it_slider id={$slider_id}]");
+			echo do_shortcode("[elegant_slider id={$slider_id}]");
 			echo $after_widget;
 		}
 	}
