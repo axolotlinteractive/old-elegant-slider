@@ -100,7 +100,7 @@ function front_end_slider($images, $paramssld, $slider)
 								$current_pos = $stri;
 								$current_key = $stri;
 							  }
-							
+
 							?>
 								<div id="huge_it_dots_<?php echo $stri; ?>_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_' . $sliderID : 'huge_it_slideshow_dots_deactive_' . $sliderID); ?>" onclick="huge_it_change_image_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
 							<?php
@@ -310,7 +310,7 @@ function front_end_slider($images, $paramssld, $slider)
 					<?php
 					$i++;
 					break;
-				} 
+				}
 			 } 
 			  ?>
                 <input  type="hidden" id="huge_it_current_image_key_<?php echo $sliderID; ?>" value="0" />
@@ -318,8 +318,9 @@ function front_end_slider($images, $paramssld, $slider)
       </div>
 	</div>
 </div>
-	  <?php 
-	return ob_get_clean();
+	  <?php
+
+	return ob_get_flush();
 }  
 ?>
 
