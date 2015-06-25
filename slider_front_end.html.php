@@ -320,7 +320,7 @@ function front_end_slider($images, $paramssld, $slider)
 </div>
 	  <?php
 
-	return ob_get_flush();
+	return ob_get_clean();
 }  
 ?>
 
