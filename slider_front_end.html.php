@@ -203,7 +203,7 @@ function front_end_slider($images, $paramssld, $slider)
 							echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
 						}
                         elseif($fancybox) {
-                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url . '" title="' . $image_row->name . '" data-description="' . $image_row->description . '">';
+                            echo '<a class="fancybox" rel="group" href="' . $image_row->image_url . '" title="' . $image_row->name . '" data-description="' . wpautop($image_row->description) . '">';
                         }
                         ?>
 
