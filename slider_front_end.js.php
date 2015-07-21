@@ -773,7 +773,7 @@ if ($hasvimeo==true) {
         });
         width+= 20;//extra width doesnt hurt, and it helps us on firefox/ie
         jQuery(".elegant_slider").width(width);
-        <?=$startFancy ? 'jQuery(".fancybox").fancybox();' : '' ?>
+        <?=$fancybox && $startFancy ? 'jQuery(".fancybox").fancybox();' : '' ?>
         jQuery(window).resize(function() {
             huge_it_popup_resize_<?php echo $sliderID; ?>();
         });
