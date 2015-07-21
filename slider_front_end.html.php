@@ -10,6 +10,7 @@ function front_end_slider($images, $paramssld, $slider)
     $imageLink = false;//TODO make dynamic
  ob_start();
     $fancybox = $slider[0]->fancybox;
+    $overflowVisible = true;
     $startFancy = $slider[0]->default_fancybox;
     $auto_play = $slider[0]->autoplay;
 	$sliderID=$slider[0]->id;
@@ -183,7 +184,7 @@ function front_end_slider($images, $paramssld, $slider)
 			?>
 		</div>
 	  <!-- ##########################IMAGES######################### -->
-      <div id="huge_it_slideshow_image_container_<?php echo $sliderID; ?>" style="width: <?=$sliderwidth?>px; height:<?=$sliderheight?>px" class="elegant_slideshow_image_container huge_it_slideshow_image_container_<?php echo $sliderID; ?>">
+      <div id="huge_it_slideshow_image_container_<?php echo $sliderID; ?>" style="width: <?=$overflowVisible ? '100%' : $sliderwidth . 'px'?>; height:<?=$sliderheight?>px" class="elegant_slideshow_image_container huge_it_slideshow_image_container_<?php echo $sliderID; ?>">
             <div class="elegant_slider huge_it_slider_<?php echo $sliderID; ?>">
 			  <?php
 			  $i=0;

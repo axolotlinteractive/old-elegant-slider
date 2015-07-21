@@ -721,6 +721,7 @@ if ($hasvimeo==true) {
 
         var staticsliderwidth=<?php echo $sliderwidth;?>;
         var sliderwidth=<?php echo $sliderwidth;?>;
+        var overflowVisible=<?php echo $overflowVisible?>
 
         var bodyWidth=jQuery(window).width();
         var parentWidth = jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").parent().width();
@@ -734,7 +735,7 @@ if ($hasvimeo==true) {
 
         jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css({width: (sliderwidth)});
         jQuery(".huge_it_slideshow_image_wrap_<?php echo $sliderID; ?>").css({height: (newHeight)});
-        jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({width: (sliderwidth)});
+        jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({width: overflowVisible ? '100%' : (sliderwidth)});
         jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?>").css({height: (newHeight)});
         jQuery.each(jQuery(".huge_it_slideshow_image_container_<?php echo $sliderID; ?> img"), function(index, img){
             var currentHeight = jQuery(img).height();
