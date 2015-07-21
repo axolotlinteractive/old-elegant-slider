@@ -10,7 +10,7 @@ function front_end_slider($images, $paramssld, $slider)
     $imageLink = false;//TODO make dynamic
  ob_start();
     $fancybox = $slider[0]->fancybox;
-    $overflowVisible = true;
+    $overflowVisible = false;
     $startFancy = $slider[0]->default_fancybox;
     $auto_play = $slider[0]->autoplay;
 	$sliderID=$slider[0]->id;
