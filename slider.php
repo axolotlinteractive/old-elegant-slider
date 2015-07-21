@@ -137,6 +137,17 @@ function   huge_it_cat_images_list($id)
     }
 }
 
+
+function getSliderImages($id) {
+
+    global $wpdb;
+
+    $query = $wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_itslider_images where slider_id = '%d' order by ordering ASC",$id);
+    $images = $wpdb->get_results($query);
+
+    return $images;
+}
+
 add_action('admin_menu', 'elegant_slider_options_panel');
 function elegant_slider_options_panel()
 {
