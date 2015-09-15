@@ -153,6 +153,16 @@ function getSlider($id) {
 	return $slider;
 }
 
+function getSliders() {
+	global $wpdb;
+
+	$query = "SELECT * FROM " . $wpdb->prefix."huge_itslider_sliders";
+
+	$sliders = $wpdb->get_results($query, ARRAY_A);
+
+	return $sliders;
+}
+
 function getSliderImages($id) {
 
     global $wpdb;
