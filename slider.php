@@ -176,7 +176,7 @@ function getSliderImages($id) {
 add_action('admin_menu', 'elegant_slider_options_panel');
 function elegant_slider_options_panel()
 {
-    $page_cat = add_menu_page('Theme page title', 'Elegant Slider', 'manage_options', 'sliders_huge_it_slider', 'sliders_huge_it_slider', 'dashicons-images-alt2');
+    $page_cat = add_menu_page('Theme page title', 'Elegant Slider', 'manage_options', 'sliders_huge_it_slider', 'sliders_huge_it_slider', 'dashicons-images-alt2', 4);
     add_submenu_page('sliders_huge_it_slider', 'Sliders', 'Sliders', 'manage_options', 'sliders_huge_it_slider', 'sliders_huge_it_slider');
     $page_option = add_submenu_page('sliders_huge_it_slider', 'General Options', 'General Options', 'manage_options', 'Options_slider_styles', 'Options_slider_styles');
 
